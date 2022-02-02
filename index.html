@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>ToDo List PWA</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>ToDo App</h1>
+        </header>
+        <main>
+            <label class="new">
+                <input type="text" placeholder="add new item" class="new-input" id="new"/>
+                <button class="new-button" id="add" disabled="true">Add</button> <!--we can use only disabled instead of disabled="true", it is the same-->
+                <span class="new-label">Add New Item</span>
+            </label>
+
+            <ul class="items" id="tasks">
+                <!--<li class="item">
+                    <input type="checkbox" class="item-check">
+                    <span class="item-text">ToDo Thing</span>
+                    <button class="delete">Delete</button>
+                </li>-->
+            </ul>
+
+        </main>
+        
+        <template id="taskTemplate">
+            <li class="item">
+                <input type="checkbox" class="item-check">
+                <span class="item-text"></span>
+                <button class="delete">Delete</button>
+            </li>
+        </template>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
