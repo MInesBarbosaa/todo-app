@@ -1,10 +1,12 @@
+(async function () {
+    
 const taskInput = document.getElementById("new");
 const addButton = document.getElementById("add");
 const tasks = document.getElementById("tasks");
 
-const items = getItems();
+const items = await getItems();
 
-items.forEach(item => {
+items.forEach((item) => {
     tasks.appendChild(CreateElementForTask(item));
 });
 
@@ -75,16 +77,33 @@ function addNewItem() {
 
 
 //get data out of local storage
-function getItems() {
-    const noItemsFound = "[]";
-    const itemsJSON = localStorage.getItem('items') || noItemsFound;
-    return JSON.parse(itemsJSON);
+async function getItems() {
+        //const noItemsFound = "[]";
+        //const itemsJSON = localStorage.getItem('items') || noItemsFound;
+        //return JSON.parse(itemsJSON);
+
+    const request = await fetch('https://todo-api-ff.azurewebsites.net/api/todo', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    });
+    const itemsJson = (await request.text()) || "[]";
+    return JSON.parse(itemsJson);
+
 }
 
 //save data in local storage
-function saveItems() {
+async function saveItems() {
+        //const data = JSON.stringify(items);
+        //localStorage.setItem('items', data);
+
     const data = JSON.stringify(items);
-    localStorage.setItem('items', data);
+    await fetch('https://todo-api-ff.azurewebsites.net/api/todo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: data
+    });
+
 }
 
+}());
 
