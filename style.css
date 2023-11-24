@@ -38,7 +38,7 @@ h1 {
     display: block;
     width: 100%;
     padding: 10px;
-    border: 0;
+    border: 0 #2f90eb;
     font-size: 1.2em;
 }
 
