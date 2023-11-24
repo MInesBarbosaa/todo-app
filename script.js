@@ -4,7 +4,8 @@ const taskInput = document.getElementById("new");
 const addButton = document.getElementById("add");
 const tasks = document.getElementById("tasks");
 
-const items = await getItems();
+//const items = await getItems();
+const items = getItems();
 
 items.forEach((item) => {
     tasks.appendChild(CreateElementForTask(item));
