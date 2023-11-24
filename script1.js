@@ -18,6 +18,7 @@ function processKeyPress(event) {
         addNewItem();
     }
 }
+}
 
 function createElementForTask(task) {
     console.log(task);
