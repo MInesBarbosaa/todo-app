@@ -7,7 +7,7 @@ html {
 body {
     max-width: 360px;
     margin: 1rem auto;
-    background: url(to_do.jpg)
+    background: url('to_do.jpg')
 }
 
 header {
