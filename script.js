@@ -7,7 +7,7 @@ const tasks = document.getElementById("tasks");
 //const items = await getItems();
 const items = getItems();
 
-items.forEach((item) => {
+items.forEach(item => {
     tasks.appendChild(CreateElementForTask(item));
 });
 
