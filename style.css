@@ -2,13 +2,13 @@ html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #2f90eb;
+    background-image: url("https://st4.depositphotos.com/7985670/30172/v/1600/depositphotos_301724364-stock-illustration-seamless-womens-pattern-hand-drawn.jpg");
+    background-size: 1200px;
 }
 
 body {
     max-width: 360px;
     margin: 1rem auto;
-     background-image: url("https://st4.depositphotos.com/7985670/30172/v/1600/depositphotos_301724364-stock-illustration-seamless-womens-pattern-hand-drawn.jpg");
-    background-size: 1200px;
 }
 
 header {
@@ -17,6 +17,7 @@ header {
     text-align: center;
     background-color: #74c2e6;
     color: white;
+    border: 1px solid #2f90eb;
 }
 
 h1 {
@@ -56,7 +57,7 @@ h1 {
 }
 
 .new-button:disabled {
-    background-color: rgb(158, 154, 154);
+    background-color: rgb(125, 89, 160);
 }
 
 .items {
@@ -68,6 +69,7 @@ h1 {
     display: flex;
     padding: 1rem;
     background-color: white;
+    border: 1px solid #2f90eb;
 }
 
 .item-check {
