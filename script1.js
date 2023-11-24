@@ -14,7 +14,6 @@ taskInput.addEventListener('keyup', processKeyPress);
 function processKeyPress(event) {
     addButton.disabled = event.target.value.trim() === "";
 
-    if (event.key === "Enter") {
     if (event.key === "Enter" && event.target.value.trim() != "") {
         addNewItem();
     }
