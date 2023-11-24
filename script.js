@@ -102,7 +102,6 @@ async function saveItems() {
         headers: { 'Content-Type': 'application/json' },
         body: data
     });
-
 }
 
 }());
