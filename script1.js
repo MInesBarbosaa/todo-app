@@ -5,7 +5,7 @@ const tasks = document.getElementById("tasks");
 const items = getItems();
 
 items.forEach(item => {
-    tasks.appendChild(CreateElementForTask(item));
+    tasks.appendChild(createElementForTask(item));
 });
 
 addButton.addEventListener('click', addNewItem);
