@@ -1,3 +1,4 @@
+const taskInput = document.getElementById("new");
 const addButton = document.getElementById("add");
 const tasks = document.getElementById("tasks");
 
@@ -21,8 +22,7 @@ function processKeyPress(event) {
 }
 
 function createElementForTask(task) {
-    console.log(task);
-
+   
     const template = document.getElementById("taskTemplate");
     const newListItem = template.content.cloneNode(true);
 
@@ -35,14 +35,13 @@ function createElementForTask(task) {
 
     deleteButton.onclick = function (event) {
         event.target.closest('li').remove();
-        items.splice(items.indexOf(item), 1);
+        items.splice(items.indexOf(task), 1);
         saveItems();
-    };
+    }
     return newListItem;
 }
 
 function addNewItem() {
-    //console.log("Add new item!");
     const task = {
         value: taskInput.value,
         complete: false
