@@ -5,23 +5,22 @@ const tasks = document.getElementById("tasks");
 const items = getItems();
 
 items.forEach(item => {
-    tasks.appendChild(CreateElementForTask(item));
+    tasks.appendChild(createElementForTask(item));
 });
 
-
-taskInput.addEventListener('keyup', processKeyPress);
 addButton.addEventListener('click', addNewItem);
-
+taskInput.addEventListener('keyup', processKeyPress);
 
 function processKeyPress(event) {
     addButton.disabled = event.target.value.trim() === "";
-    
+
     if (event.key === "Enter" && event.target.value.trim() != "") {
         addNewItem();
     }
 }
 
 function createElementForTask(task) {
+   
     const template = document.getElementById("taskTemplate");
     const newListItem = template.content.cloneNode(true);
 
@@ -32,7 +31,7 @@ function createElementForTask(task) {
     text.innerText = task.value;
     checkbox.checked = task.complete;
 
-    deleteButton.onclick = function(event) {
+    deleteButton.onclick = function (event) {
         event.target.closest('li').remove();
         items.splice(items.indexOf(task), 1);
         saveItems();
@@ -56,15 +55,13 @@ function addNewItem() {
     taskInput.focus();
 }
 
-    function getItems() {
-        const noItemsFound = "[]";
-        const itemsJSON = localStorage.getItem('items') || noItemsFound;
-        return JSON.parse(itemsJSON);
+function getItems() {
+    const noItemsFound = "[]";
+    const itemsJSON = localStorage.getItem('items') || noItemsFound;
+    return JSON.parse(itemsJSON);
 }
 
-    function saveItems() {
-        const data = JSON.stringify(items);
-        localStorage.setItem('items', data);
-    });
-};
-
+function saveItems() {
+    const data = JSON.stringify(items);
+    localStorage.setItem('items', data);
+}
